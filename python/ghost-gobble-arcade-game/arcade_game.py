@@ -31,7 +31,7 @@ def lose(power_pellet_active, touching_ghost):
     :param touching_ghost: bool - is the player touching a ghost?
     :return: bool - has the player lost the game?
     """
-    return not power_pellet_active or touching_ghost
+    return not power_pellet_active and touching_ghost
     
 
 
