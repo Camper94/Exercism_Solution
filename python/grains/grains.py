@@ -8,7 +8,7 @@ def square(number):
 
 def total():
     try:
-        result = int(2*(square(64)-1))+1
+        result = int(2*(square(64)))-1
         return result
     except Exception as exc:
         raise ValueError(str(exc))
