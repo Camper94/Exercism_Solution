@@ -1,30 +1,13 @@
+def istriangle(sides):
+    return any(sides) and sum(sides) > 2*max(sides)
+
 def equilateral(sides):
-    s = 0
-    r = False
-    for d in sides:
-        if s == d and s != 0: 
-            s = d
-            r = True 
-        else: 
-            s = d
-            r = False
-    return r
+    return istriangle(sides) and len(set(sides)) == 1 
 
 def isosceles(sides):
-    s = sides[0]
-    count= 0
-    r = False
-    for d in sides:
-        if s == d: 
-            count = count+1
-            if count == 2: 
-                r = True
-    return r
-
-
+    return istriangle(sides) and ((equilateral(sides)) or len(set(sides)) == 2)
 
 def scalene(sides):
-    pass
+    return istriangle(sides) and len(set(sides)) == 3
 
 
-print(isosceles([1,1,3]))
