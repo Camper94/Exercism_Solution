@@ -1,9 +1,7 @@
 def response(hey_bob):
-    str = hey_bob
-    if str.endswith('?') and str.isupper()  : return "Calm down, I know what I'm doing!"
+    str = hey_bob.strip()
+    if str.endswith("?") and str.isupper()  : return "Calm down, I know what I'm doing!"
     if str.isupper()  : return "Whoa, chill out!"
-    if str.endswith('?') or str.endswith('?   ') : return "Sure."
-    if str == None or str == "" or str == "          " or str== "\n\r \t" or str =="\t\t\t\t\t\t\t\t\t\t": 
-        return "Fine. Be that way!"
-    elif str[-1]== " " : return "Whatever."
+    if str.endswith("?"): return "Sure."
+    if not str: return "Fine. Be that way!"
     return "Whatever."
