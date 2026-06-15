@@ -30,9 +30,7 @@ def find_my_friend(queue, friend_name):
     Returns:
         int: The index at which the friends name was found.
     """
-    for index, item in enumerate(queue): 
-        if item == friend_name : return index
-    return queue
+    return queue.index(friend_name)
 
 def add_me_with_my_friends(queue, index, person_name):
     """Insert the late arrival's name at a specific index of the queue.
@@ -72,11 +70,7 @@ def how_many_namefellows(queue, person_name):
     Returns:
         int: The number of times the name appears in the queue.
     """
-    counter = 0
-    for item in queue :
-        if item == person_name:
-            counter = counter + 1
-    return counter 
+    return queue.count(person_name)
 
 def remove_the_last_person(queue):
     """Remove the person in the last index from the queue and return their name.
@@ -87,9 +81,7 @@ def remove_the_last_person(queue):
     Returns:
         str: The name that has been removed from the end of the queue.
     """
-    last = queue[-1]
-    queue.pop(-1)
-    return last
+    return queue.pop()
 
 
 def sorted_names(queue):
