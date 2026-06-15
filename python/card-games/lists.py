@@ -40,9 +40,7 @@ def list_contains_round(rounds, number):
     Returns:
         bool: Was the round played?
     """
-    for item in rounds : 
-        if item == number : return True
-    return False
+    return number in rounds
 
 
 def card_average(hand):
