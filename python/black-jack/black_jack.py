@@ -60,8 +60,10 @@ def value_of_ace(card_one, card_two):
     Returns:
         int: Either 1 or 11, which is the value of the upcoming ace card.
     """
-
-    pass
+    base = value_of_card(card_one) + value_of_card(card_two)
+    if base + 11 < 21 and (card_one  == 'A' or card_two =='A'): return 1
+    elif base + 11 > 21 : return 1
+    return 11
 
 
 def is_blackjack(card_one, card_two):
@@ -78,8 +80,8 @@ def is_blackjack(card_one, card_two):
     Returns:
         bool: Is the hand is a blackjack (two cards worth 21).
     """
-
-    pass
+    if [value_of_card(card_one),value_of_card(card_two)] in [[1,10],[10,1]]: return True
+    return False
 
 
 def can_split_pairs(card_one, card_two):
@@ -92,8 +94,8 @@ def can_split_pairs(card_one, card_two):
    Returns:
         bool: Can the hand be split into two pairs? (i.e. cards are of the same value).
     """
-
-    pass
+    if value_of_card(card_one) == value_of_card(card_two): return True
+    return False
 
 
 def can_double_down(card_one, card_two):
@@ -106,5 +108,6 @@ def can_double_down(card_one, card_two):
     Returns:
         bool: Can the hand can be doubled down? (i.e. totals 9, 10 or 11 points).
     """
-
-    pass
+    base = value_of_card(card_one)+value_of_card(card_two)
+    if base in [9,10,11]: return True
+    return False
