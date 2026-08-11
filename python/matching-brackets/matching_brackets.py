@@ -12,6 +12,7 @@ def is_paired(input_string):
             parentheses.append(item)
     
     frst_cond = len(brackets)%2==0 and len(braces)%2==0  and len(parentheses)%2==0 
+    print(not brackets)
     try:
         brackets_cond = brackets[0] == '[' and brackets[-1] ==']'
     except IndexError:
