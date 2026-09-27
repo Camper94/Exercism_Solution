@@ -1,10 +1,23 @@
 def is_paired(input_string):
     
+    pairs = {'[': ']', '{': '}', '(': ')' }
+    stack = []
     brackets = []
     braces = []
     parentheses= []
+     
+    for char in input_string:
+        if char in pairs:
+            stack.append(char)
+        elif char == " ":
+            continue
+        elif stack: 
+            opening = stack.pop()
+            expected = pairs[opening]
+            matches = expected == char
+            if not matches:
+                 return False
 
-  
     for item in input_string:
         if item in ('[',']'):
             brackets.append(item)
@@ -13,7 +26,7 @@ def is_paired(input_string):
         elif item in ('(',')'):
             parentheses.append(item)
     
-    frst_cond = len(brackets)%2==0 and len(braces)%2==0  and len(parentheses)%2==0
+    frst_cond = len(brackets)%2==0 and len(braces)%2==0 and len(parentheses)%2==0
     print(brackets, braces, parentheses)
 
     try :
@@ -28,12 +41,8 @@ def is_paired(input_string):
         else: parentheses_cond = False
     except Exception as e:
         print(f"Something went wrong: {e}")
-
-    print(frst_cond)
-    print(brackets_cond)
-    print(braces_cond)
-    print(parentheses_cond)
    
-    
 
     return frst_cond and (brackets_cond or braces_cond or parentheses_cond)
+
+print(is_paired("[({}])"))

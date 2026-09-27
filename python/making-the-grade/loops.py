@@ -77,10 +77,10 @@ def student_ranking(student_scores, student_names):
     Returns:
         list[str]: Strings in format ["<rank>. <student name>: <score>"].
     """
-    list = []
+    rank = []
     for index, scores in enumerate(student_scores):
-        list.append(f"{index+1}. {student_names[index]}: {scores}")
-    return list
+        rank.append(f"{index+1}. {student_names[index]}: {scores}")
+    return rank
 
 def perfect_score(student_info):
     """Create a list that contains the name and grade of the first student to make a perfect score on the exam.
@@ -92,7 +92,6 @@ def perfect_score(student_info):
         list: First `[<student name>, 100]` found OR `[]` if no student score of 100 is found.
     """
     for list in student_info:
-        for item in list:
-            if item == 100:
-                return list 
+        if list[1] == 100:
+            return list 
     return []

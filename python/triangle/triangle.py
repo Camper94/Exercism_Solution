@@ -9,5 +9,3 @@ def isosceles(sides):
 
 def scalene(sides):
     return istriangle(sides) and len(set(sides)) == 3
-
-

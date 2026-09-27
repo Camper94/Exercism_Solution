@@ -10,7 +10,7 @@ def add_prefix_un(word):
     Returns:
         str: Root word prepended with 'un'.
     """
-    return "un"+word;
+    return "un"+word
     
 
 
@@ -31,7 +31,7 @@ def make_word_groups(vocab_words):
         'en :: enclose :: enjoy :: enlighten'.
 
     """
-    separator = ' :: '+ vocab_words[0]
+    separator = " :: "+ vocab_words[0]
     str = separator.join(vocab_words)
     return str
 
